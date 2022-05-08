@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-col-center {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  .app {
+    @apply relative flex h-full min-h-screen w-full flex-col items-center overflow-hidden overflow-y-auto bg-base-200 text-base-content;
+  }
+
+  .custom-card {
+    @apply relative flex flex-col rounded-2xl bg-base-100 shadow-xl;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.custom-tooltip-left::before {
+  right: calc(100% + 1rem) !important;
+}
+
+.custom-tooltip-left::after {
+  right: calc(100% + 0.625rem) !important;
+}
+
+.custom-tooltip-right::before {
+  left: calc(100% + 1rem) !important;
+}
+
+.custom-tooltip-right::after {
+  left: calc(100% + 0.625rem) !important;
+}
+
+.custom-tooltip-bottom::before {
+  top: calc(100% + 1rem) !important;
+}
+
+.custom-tooltip-bottom::after {
+  top: calc(100% + 0.625rem) !important;
+}

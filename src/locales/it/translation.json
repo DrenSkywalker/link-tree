@@ -1,0 +1,44 @@
+{
+  "title": "Dren",
+  "footer": {
+    "made-with": "Made with",
+    "by": "by Dren"
+  },
+  "badges": {
+    "nerd": {
+      "title": "Nerd"
+    },
+    "autistic": {
+      "title": "Autistic"
+    },
+    "vegan": {
+      "title": "Vegan"
+    }
+  },
+  "links": {
+    "treedom": {
+      "title": "Treedom Forest",
+      "tooltip": "Foresta Principesca - dedicata a Claire"
+    },
+    "twitch": {
+      "title": "Twitch",
+      "tooltip": "Chiacchiere & Gaming"
+    },
+    "github": {
+      "title": "Github",
+      "tooltip": "console.log('Hello World')"
+    },
+    "instagram": {
+      "title": "Instagram",
+      "tooltip": "Gatti, cibo e selfies"
+    },
+    "discord": {
+      "title": "Discord",
+      "tooltip": "Harmony Server - chill & LGBTQI+ friendly"
+    },
+    "tiktok": {
+      "title": "Tik Tok",
+      "tooltip": "Gatti e robe strane"
+    }
+  }
+}
