@@ -4,15 +4,20 @@ import {useTranslation} from 'react-i18next';
 import {useApp} from '../context/app.context';
 import {badgesList, linksList, themes} from '../imports/constants';
 
-import Icon from './Icon';
+import useMediaQuery from '../hooks';
 
 import {ImageAvatar, ImageAvatarDark} from '../assets/images';
 
+import Icon from './Icon';
+
 const Main = () => {
   const {t} = useTranslation();
+
   const {
     state: {currentTheme},
   } = useApp();
+
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   const openLink = (url: string) => {
     window.open(url, '_blank');
@@ -49,12 +54,14 @@ const Main = () => {
           {linksList.map(link => (
             <div
               key={link.title}
-              className="custom-tooltip-right tooltip tooltip-right w-full"
+              className={`${
+                isDesktop ? 'custom-tooltip-right tooltip-right' : 'custom-tooltip-top tooltip-top'
+              } tooltip w-full`}
               data-tip={t(link.tooltip)}
             >
               <button
                 type="button"
-                className={`btn btn-block border-0 hover:scale-105 ${link.color} !text-white/90 focus-visible:outline-neutral-content`}
+                className={`btn btn-block border-0 hover:scale-105 ${link.color} relative !text-white/90 focus-visible:outline-neutral-content`}
                 onClick={() => openLink(link.url)}
               >
                 <span className="absolute left-4">
@@ -71,7 +78,3 @@ const Main = () => {
 };
 
 export default Main;
-
-/*
-
-*/

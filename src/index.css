@@ -51,9 +51,17 @@
 }
 
 .custom-tooltip-bottom::before {
-  top: calc(100% + 1rem) !important;
+  top: calc(100% + 0.5rem) !important;
 }
 
 .custom-tooltip-bottom::after {
-  top: calc(100% + 0.625rem) !important;
+  top: calc(100% + 0.07rem) !important;
+}
+
+.custom-tooltip-top::before {
+  bottom: calc(100% + 0.5rem) !important;
+}
+
+.custom-tooltip-top::after {
+  bottom: calc(100% + 0.07rem) !important;
 }
