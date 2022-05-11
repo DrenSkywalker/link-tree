@@ -1,14 +1,18 @@
 import * as React from 'react';
 import {useTranslation} from 'react-i18next';
 
-import {badgesList, linksList} from '../imports/constants';
+import {useApp} from '../context/app.context';
+import {badgesList, linksList, themes} from '../imports/constants';
 
 import Icon from './Icon';
 
-import {ImageAvatar} from '../assets/images';
+import {ImageAvatar, ImageAvatarDark} from '../assets/images';
 
 const Main = () => {
   const {t} = useTranslation();
+  const {
+    state: {currentTheme},
+  } = useApp();
 
   const openLink = (url: string) => {
     window.open(url, '_blank');
@@ -20,7 +24,11 @@ const Main = () => {
         <div className="flex-center absolute top-0 h-28 w-28 -translate-y-1/2">
           <div className="mask mask-squircle size-full">
             <figure className="size-full">
-              <img src={ImageAvatar} alt="avatar" className="object-cover size-full" />
+              <img
+                src={currentTheme === themes.light ? ImageAvatar : ImageAvatarDark}
+                alt="avatar"
+                className="object-cover size-full"
+              />
             </figure>
           </div>
         </div>
@@ -46,7 +54,7 @@ const Main = () => {
             >
               <button
                 type="button"
-                className={`btn btn-block border-0 hover:scale-105 ${link.color} !text-white/90`}
+                className={`btn btn-block border-0 hover:scale-105 ${link.color} !text-white/90 focus-visible:outline-neutral-content`}
                 onClick={() => openLink(link.url)}
               >
                 <span className="absolute left-4">

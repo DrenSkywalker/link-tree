@@ -32,7 +32,7 @@ const Header = () => {
     <header className="relative flex w-full items-center justify-end py-2 px-4">
       <button
         type="button"
-        className="btn btn-ghost btn-circle text-neutral-content"
+        className="btn btn-ghost btn-circle text-neutral-content focus-visible:outline-neutral-content"
         onClick={() => handleChangeLanguage(i18next.language === 'it' ? 'en' : 'it')}
       >
         {currentLanguage}
@@ -40,7 +40,7 @@ const Header = () => {
 
       <button
         type="button"
-        className="btn btn-ghost btn-circle ml-2"
+        className="btn btn-ghost btn-circle ml-2 focus-visible:outline-neutral-content"
         onClick={() => handleChangeTheme(isThemeLight ? themes.dark : themes.light)}
       >
         <Icon icon={isThemeLight ? IconMoon : IconSun} />
