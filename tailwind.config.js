@@ -3,8 +3,14 @@ const plugin = require('tailwindcss/plugin');
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    colors: {},
-    extend: {},
+    colors: {
+      white: '#fff',
+    },
+    extend: {
+      spacing: {
+        full: '100%',
+      },
+    },
   },
   plugins: [
     require('daisyui'),

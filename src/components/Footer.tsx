@@ -9,8 +9,10 @@ const Footer = () => {
   const {t} = useTranslation();
 
   return (
-    <footer className="flex-center w-full py-4">
-      <p>{t('footer.made-with')}</p> <Icon icon={IconHeart} /> <p>{t('footer.by')}</p>
+    <footer className="flex-center relative w-full space-x-2 py-4">
+      <p className="text-gradient">{t('footer.made-with')}</p>
+      <Icon icon={IconHeart} />
+      <p className="text-gradient-inverse">{t('footer.by')}</p>
     </footer>
   );
 };

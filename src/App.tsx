@@ -3,9 +3,9 @@ import React from 'react';
 import {useApp} from './context/app.context';
 
 import Header from './components/Header';
-import Card from './components/Card';
+import Main from './components/Main';
 import Footer from './components/Footer';
-import CustomParticles from './components/CustomParticles';
+import Background from './components/Background';
 
 const App = () => {
   const {
@@ -14,27 +14,12 @@ const App = () => {
 
   return (
     <div className="app" data-theme={currentTheme}>
-      <CustomParticles />
-
+      <Background />
       <Header />
-
-      <main className="mt-14 mb-7">
-        <Card />
-      </main>
-
+      <Main />
       <Footer />
     </div>
   );
 };
 
 export default App;
-
-/*
-      <Header />
-
-      <main className="mt-14 mb-7">
-        <Card />
-      </main>
-
-      <Footer />
-      */

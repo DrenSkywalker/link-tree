@@ -3,20 +3,26 @@ import * as React from 'react';
 export type IconProps = {
   icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   white?: boolean;
-  className?: string;
+  size?: 'sm' | 'md';
 };
 
 const Icon = (props: IconProps) => {
-  const {icon, white, className} = props;
+  const {icon, white, size} = props;
 
   const Component = icon;
 
+  const sizes = {
+    sm: 'size-5',
+    md: 'size-6',
+  };
+  const getSize = () => sizes[size || 'sm'];
+
   return (
-    <div className="h-fit w-fit p-[0.438rem]">
+    <div className="h-fit w-fit">
       <Component
-        className={`flex-auto shrink-0 grow-0 size-5 ${
-          white ? 'fill-base-100' : 'fill-neutral-content'
-        } ${className}`}
+        className={`flex-auto shrink-0 grow-0 ${getSize()} ${
+          white ? 'fill-white' : 'fill-neutral-content'
+        }`}
       />
     </div>
   );
